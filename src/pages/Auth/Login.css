@@ -1,0 +1,204 @@
+.Login{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.Login .welcomeScreen{
+    width: 50%;
+    height: 100%;
+
+    img{
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.Login .formHolder{
+    width: 50%;
+    height: 100%;
+    background-color: #f9fafd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    gap: 20px;
+}
+
+.formHolder header{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+
+    article{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+
+        select{
+            padding: 10px;
+            width: 70%;
+            cursor: pointer;
+            outline: none;
+        }
+    }
+}
+
+.formHolder .formCOn{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    padding-bottom: 50px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.formCOn aside{
+    width: 100%;
+    background-color: #2e81ef;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+    img{
+        width: 60%;
+        height: 40px;
+        background-size: contain;
+        background-position: center;
+    }
+}
+
+.formHolder .formCOn form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px;
+    font-size: 14px;
+    line-height: 21px;
+    font-family: Poppins        ;
+    color: #5e6e82        ;
+    font-weight: 500;
+
+   span:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .formBtn{
+        width: 100%;
+        background-color:#2e81ef;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 16px;
+        outline: none;
+        border: none;
+        transition: background 0.3s ease;
+        border-radius: 5px;
+    }
+
+    button:hover{
+        cursor: pointer;
+        background-color: rgb(59, 58, 58);
+    }
+}
+
+
+.formHolder form section{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    
+    label{
+        font-size: 14px;
+        line-height: 21px;
+        font-family: Poppins        ;
+        color: #5e6e82        ;
+        font-weight: 500;
+    }
+
+    input{
+        width: 100%;
+        outline: none;
+        padding: 10px;
+        border-radius: 5px;
+        border: 2px solid #dde2ec;
+        font-weight: 400;
+    }
+}
+
+.formHead{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h3{
+        font-size: 27.648px;
+        line-height: 33.1776px;
+        font-weight: 500;
+        color:#344050;
+        font-family: Poppins;
+    }
+}
+
+.redirection{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    h4{
+        color: #2e81ef;
+    }
+    h4:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+
+    .Login .welcomeScreen{
+        display: none;
+    }
+
+   .Login .formHolder{
+        width: 100%;
+        padding: 20px;
+    }
+
+    .formHolder header article{
+        width: 100%;
+    }
+
+    .formHead{
+        h3{
+            font-size: 20px;
+        }
+    }
+
+    .formHolder .formCOn{
+        width: 100%;
+    }
+
+    .formHead .redirection{
+        width: 70%;
+    }
+
+
+}

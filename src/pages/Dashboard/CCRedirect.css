@@ -1,0 +1,163 @@
+.CCRedirect{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 10px;
+    border-left: 1px solid #d9dbdf;
+}
+
+.date{
+    width: 100%;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+        color: white;
+        background-color: #e2e9e1;
+        border-radius: 10px;
+        padding: 20px;
+}
+
+.tks{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #d9dbdf;
+}
+
+ .atmCardDetails{
+    width: 100%;
+    border-radius: 5px;
+    background-color: #e2e9e1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+
+}
+
+.atmCardDetails section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+
+    input{
+        width: 100%;
+        padding: 10px;
+        outline: blue;
+        background-color: white;
+        border: 2px solid #d9dbdf;
+
+    }
+}
+
+.atmInfo {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+
+    .sec{
+        width: 33%;
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+
+        input{
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #d9dbdf;
+            border-radius: 8px;
+        }
+
+    }
+}
+
+
+
+ .infoBox{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #d9dbdf;
+
+
+    .h{
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        padding-top: 20px;
+        align-items: center;
+
+        .online{
+            width: 40%;
+            background-color: white;
+            height: max-content;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            border-radius: 5px;
+            box-shadow: none;
+            padding: 20px;
+            border: none;
+
+            h3{
+                border-top: 1px solid #d9dbdf;
+                padding-top: 20px;
+                font-size:  10.08px;
+                line-height: 15.12px;
+                font-weight: 400;
+                font-family: sans-serif;
+                color: #3e4b5b;
+            }
+        }
+        .online:hover {
+            transform: translateY(-10px);
+            /* color: #00afe9;  */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        }
+
+        .processing{
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 10.08px;
+            line-height: 15.12px;
+            font-weight: 500;
+            border-right: none;
+            color: #3e4b5b;
+            font-family: sans-serif;
+            text-transform: uppercase;
+            padding: 0%;
+            
+            span{
+                font-weight: 400;
+            }
+
+            button{
+                width: 100%;
+                padding: 5px;
+                /* height: 40px; */
+                border-radius: 5px;
+                color: white;
+                background-color: #24b314;
+                border: none;
+                outline: none;
+                transition: background all 0.3s ease;
+            }
+            button:hover{
+                cursor: pointer;
+                background-color: #179309;
+            }
+        }
+
+    }
+}

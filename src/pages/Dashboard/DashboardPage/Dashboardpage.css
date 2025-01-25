@@ -1,0 +1,593 @@
+.Dashboardpage{
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.Dashboardpage .pageHeader{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    h3{
+        color: #0076b6;
+        font-family: sans-serif;
+        font-size: 24px;
+        line-height: 24px;
+        font-weight: 700;
+    }
+
+    span{
+        line-height: 19.5px;
+        font-size: 13px;
+        font-weight: 400;
+        color:  #494c57;
+        font-family: sans-serif;
+    }
+}
+
+.Dashboardpage .userAcctInfo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.userAcctInfo .userInfo{
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bigCard{
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;  
+
+    marquee{
+        font-size: 13px;
+        line-height: 19.5px;
+        color: #494c57;
+        font-weight: 700;
+        font-family: sans-serif;
+    }
+}
+
+.bcUp{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;  
+}
+
+.bcUp .warning{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+
+    h3{
+       line-height: 19.5px;
+        font-size: 14px;
+        color:  #494c57;
+        font-weight: 700;
+        font-family: sans-serif;
+    }
+
+    span{
+        line-height: 19.5px;
+        font-size: 14px;
+        color:  #494c57;
+        font-family: sans-serif;
+        font-weight: 400;
+    }
+}
+
+.bcUpDown{
+    display: flex;
+    flex-direction: column;
+
+    .bcUpDownHead{
+        width: 50%;
+        display: flex;
+        justify-content: flex-start;
+        gap: 10px; 
+
+        img{
+            width: 50px;
+            height: 30px;
+            background-size: contain;
+        }
+    
+    }
+
+    aside{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        line-height:  43.2px;
+        font-size: 34px;
+        font-family: Archivo;
+        color: #212229;
+        font-weight: 400;
+    }
+}
+
+
+
+.bcDown{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bcDown .bcAcctInfo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    
+
+    span{
+        line-height: 16.5px;
+        font-size: 11px;
+        font-weight: 500;
+        font-family: sans-serif;
+        color:  #70737c;
+    }
+
+    h3{
+       font-family: Archivo;
+       font-size: 28px;
+       line-height: 28px;
+       font-weight: 700;
+       color:  #212229;
+    }
+}
+
+.bcDownFooter{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    /* align-items: center; */
+}
+
+.bcDownFooter section{
+    width: 33.3333333%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: none;
+
+    h3{
+        line-height: 19.5px;
+        font-size: 19px;
+        font-weight: 400;
+        color: #494c57;
+        text-transform: uppercase;
+    }
+
+    span{
+        line-height: 16.5px;
+        font-size: 13px;
+        font-weight: 500;
+        font-family: sans-serif;
+        color:  #70737c;
+    }
+}
+
+
+.beneficiaries{
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+
+
+     .wrap{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        h3{
+            font-size: 16.2501px;
+            line-height:  19.5001px;
+            color: #212229;
+            font-weight: 700;
+            font-family: sans-serif;
+        }
+
+        button{
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            cursor: pointer;
+            background-color: #d83337;
+            outline: none;
+            border: none;
+            transition: background all 0.3s ease;
+    }
+    button:hover{
+        background-color: #ff4c4f;
+    }
+
+        table{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            thead{
+                width: 100%;
+                display: flex;
+                align-items: center;
+        
+                th{
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    background-color: white;
+                    border: 1px solid #dee2e6;
+                    padding: 10px;
+                    text-transform: uppercase;
+                    color:  #70737c;
+                    font-size: 11px;
+                    line-height: 11px;
+                    font-weight: 700;
+                    font-family: sans-serif;
+                }
+            }
+            tbody{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+
+                tr{
+                    width: 100%;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+
+
+                    td{
+                        height: 50px;
+                        display: flex;
+                        align-items: center;
+                        background-color: #f4f5f7;
+                        border: 1px solid #dee2e6;
+                        padding: 10px;
+                        text-transform: uppercase;
+                        color:  #70737c;
+                        font-size: 11px;
+                        line-height: 11px;
+                        font-weight: 700;
+                        font-family: sans-serif;
+                    }
+                }
+            }
+        }
+     }   
+}
+
+.userAcctInfo .atmInfo{
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.atmInfo .userIpBalance{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.bookBalance{
+    width: 50%;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+
+    .bbHead{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        h3{
+            font-size:  13px;
+            line-height:  15.6px;
+            font-weight: 700;
+            color: #212229;
+            font-family: sans-serif;
+        }
+
+        img{
+            width: 50%;
+            height: 30px;
+            background-size: contain;
+        }
+
+    }
+
+    .bbInfo{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        h2{
+           color: #969dab;
+           font-family: Archivo;
+            font-size: 30px;
+            line-height: 30px;
+            font-weight: 400;
+        }
+
+        span{
+            font-family: Archivo;
+            font-size: 30px;
+            line-height: 30px;
+            color:  #212229;
+            font-weight: 600;
+        }
+        p{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #969dab;;
+
+            span{
+                font-size: 12px;
+                line-height: 18px;
+                font-weight: 400;
+                font-family: sans-serif;
+            }
+        }
+
+    }
+
+}
+
+.userIp{
+    width: 50%;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    h3{
+        color: #212229        ;
+        font-size: 13px;
+        line-height: 15.6px;
+        font-weight: 700;
+        font-family: sans-serif;
+        text-transform: uppercase;
+    }
+
+    .upInfo{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 10px;
+        
+    img{
+        width: 30px;
+        height: 30px;
+        background-size: contain;
+    }
+
+    h3{
+        font-size: 22.7501px;
+        line-height: 22.3001px;
+        color:  #494c57;
+        font-weight: 500;
+    }
+    }
+}
+
+.Dashboardpage .userAcctStatement{
+    width: 100%;
+    background-color: #ffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.userAcctStatement .review{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid grey;
+    text-transform: uppercase;
+}
+
+.userAcctStatement .statements{
+    width: 100%;
+    margin-top: 10px;
+    padding: 20px;
+    border-bottom: 1px solid grey;
+    display: flex;
+    align-items: end;
+    font-size:  13.0001px;
+    font-family: sans-serif;
+    font-weight: 400;
+    color: #212229;
+    line-height: 15.6001px;
+    text-transform: uppercase;
+}
+
+.userAcctStatement table{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* gap: 20px; */
+
+    thead{
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        th{
+            width: 16.6667%;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            background-color: #f4f5f7;
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            text-transform: uppercase;
+            color:  #70737c;
+            font-size: 11px;
+            line-height: 11px;
+            font-weight: 700;
+            font-family: sans-serif;
+        }
+    }
+
+    tbody{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        
+        tr{
+            width: 100%;
+            display: flex;
+            align-items: center;
+
+            td{
+                width: 16.6667%;
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                background-color: #f4f5f7;
+                border: 1px solid #dee2e6;
+                padding: 10px;
+                text-transform: uppercase;
+                color:  #70737c;
+                font-size: 11px;
+                line-height: 11px;
+                font-weight: 700;
+                font-family: sans-serif;
+            }
+        }
+    }
+}
+
+.viewMore{
+    border: none;
+    outline: none;
+
+    button{
+        padding: 10px;
+        border: none;
+        outline: none;
+        background-color: #d83337;
+        font-size: 18px;
+        color: white;
+        cursor: pointer;
+        transition: background-color all 0.3s ease;
+    }
+    button:hover{
+        background-color: #d71f22;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+    .Dashboardpage .userAcctInfo{
+        flex-direction: column;
+        gap: 20px;
+
+        .userInfo{
+            width: 100%;
+            padding: 0%;
+        }
+    }
+
+    .userAcctInfo .atmInfo{
+        width: 100%;
+    }
+
+    .atmInfo .userIpBalance{
+        flex-direction: column;
+        
+        .bookBalance{
+            width: 100%;
+        }
+
+        .userIp{
+            width: 100%;
+        }
+    }
+
+    .userAcctStatement table{
+        min-height: 100%;
+        max-width: 100%;
+        overflow-x: scroll;
+
+        thead{
+            width: max-content;
+            th{
+                width: max-content;
+                padding: 10px;
+            }
+        }
+
+        
+        tbody{
+            width: max-content;
+
+            tr{
+                width: max-content;
+
+                td{
+                    padding: 10px;
+                    width: max-content;
+                }
+            }
+        }
+    }
+    .beneficiaries table{
+        min-height: 100%;
+        max-width: 100%;
+        overflow-x: scroll;
+
+        thead{
+            width: max-content;
+            th{
+                width: max-content;
+                padding: 10px;
+            }
+        }
+
+        
+        tbody{
+            width: max-content;
+
+            tr{
+                width: max-content;
+
+                td{
+                    padding: 10px;
+                    width: max-content;
+                }
+            }
+        }
+    }
+
+
+}

@@ -1,0 +1,122 @@
+.Statement{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.Statement .stateMentHead{
+    width: 100%;
+    border-bottom: 1px solid grey;
+    padding-bottom: 20px;
+}
+
+.Statement section{
+    width: 100%;
+    border-bottom: 1px solid grey;
+    padding-bottom: 20px;
+
+    button{
+        border: none;
+        outline: none;
+        background-color: #00afe9;
+        border-radius: 5px;
+        color: white;
+        padding: 10px;
+        transition: background all 0.3s ease;
+    }
+
+    button:hover{
+        cursor: pointer;
+        background-color: #348a2c;
+    }
+}
+
+.Statement .info{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.info .Logo{
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    img{
+        height: 50px;
+        width: 50%;
+        background-size: contain;
+    }
+}
+
+.info .sectioNs{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    section{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: none;
+    }
+}
+
+.info h3{
+    width: 100%;
+    border-bottom: 1px solid grey;
+    padding-bottom: 20px;
+}
+
+.info table{
+    display: flex;
+    flex-direction: column;
+
+    thead,tr{
+        display: flex;
+        align-items: center;
+
+        th,td{
+            border: 1px solid #c6ccd9;
+            padding: 10px;
+            background-color: white;
+            font-size: 10.08px;
+            font-family: Times New Roman;
+            line-height:  12.096px;
+            color:  #0a0a0b;
+            font-weight: 500;
+            padding-right: 40px;
+        }
+    }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+    
+.Statement{
+    padding: 0%;
+}
+.info .Logo {
+    width: 100%;
+    justify-content: center;
+}
+
+.info .sectioNs{
+    width: 100%;
+}
+
+.info table{
+    overflow-x: scroll;
+
+    thead,th,tr,td{
+        width: max-content;
+    }
+}
+
+
+}

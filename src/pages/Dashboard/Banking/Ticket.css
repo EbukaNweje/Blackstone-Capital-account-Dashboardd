@@ -1,0 +1,143 @@
+.Ticket{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.Ticket article{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #d9dbdf;
+    margin-bottom: 40px;
+}
+
+.Ticket article main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    gap: 20px;
+    padding: 0%;
+
+    h3{
+        padding-bottom: 20px;
+        border-bottom: 1px solid #d9dbdf; 
+    }
+}
+
+.Ticket article .Tmain{
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+}
+
+.Ticket article .Tmain form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 30px;
+
+    section{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        
+        label{
+            width: 30%;
+            font-size: 14.4px;
+            line-height:  21.6px;
+            color: #005e6a;
+            font-weight: 400;
+            font-family: sans-serif;
+        }
+
+        input{
+            width: 30%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #dde2ec;
+        }
+        input:disabled{
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #dde2ec;
+            background-color: #e9ecef;
+        }
+        textarea{
+            width: 30%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #dde2ec;
+        }
+
+    }
+
+    
+}
+
+.Ticket .Tmain form .btnHolder{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    
+    button{
+        width: max-content;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        background-color: #0860be;
+        color: white;
+        border-radius: 5px;
+        font-size: 15px;
+        border: none;
+        outline: none;
+        transition: background all 0.3s all ease;
+    }
+    button:hover{
+        cursor: pointer;
+        background-color: #0860be;
+    }
+    span{
+        color: #0860be;
+        cursor: pointer;
+    }
+}
+  
+
+.Ticket aside{
+    width: 30%;
+    display: flex;
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+
+    .Ticket article{
+        width: 100%;
+    }
+
+    .Ticket article .Tmain form section label{
+        width: 100%;
+    }
+    .Ticket article .Tmain form section input{
+        width: 100%;
+    }
+    .Ticket article .Tmain form section textArea{
+        width: 100%;
+    }
+
+    .Ticket aside{
+        display: none;
+    } 
+}

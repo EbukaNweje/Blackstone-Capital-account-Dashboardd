@@ -1,0 +1,124 @@
+.Register{
+    width: 100%;
+    display: flex;
+}
+
+.Register .welcomeScreen{
+    width: 50%;
+
+    img{
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.Register .formHolder{
+    width: 50%;
+    background-color: #f9fafd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    gap: 20px;
+}
+
+.Registerform{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+
+    button{
+        width: 100%;
+        background-color:#2e81ef;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 16px;
+        outline: none;
+        border: none;
+        transition: background 0.3s ease;
+        border-radius: 5px;
+    }
+    button:hover{
+        cursor: pointer;
+        background-color:#0a5cc8;
+    }
+    
+}
+
+.Registerform aside{
+    width: 100%;
+    background-color: #2e81ef;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+    img{
+        width: 60%;
+        height: 40px;
+        background-size: contain;
+        background-position: center;
+    }
+}
+
+.Registerform form{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Registerform form .twoSec{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.twoSec section{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.term{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    span{
+        color: #2e81ef;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+        .welcomeScreen{
+            display: none;
+        }
+
+
+      .Register  .formHolder{
+            width: 100%;
+            padding: 20px;
+        }
+
+        .Registerform{
+            width: 100%;
+        }
+
+}

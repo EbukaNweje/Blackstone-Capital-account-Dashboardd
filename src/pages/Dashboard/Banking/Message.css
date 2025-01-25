@@ -1,0 +1,28 @@
+.Message{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    h3{
+        font-size: 16px;
+        line-height:  19.2px;
+        font-weight: 500;
+        font-family: Rubik;
+        color: #334152;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #d9dbdf; 
+    }
+}
+
+.Message .DAmain{
+    width: 100%;
+    border-bottom: 1px solid #d9dbdf; 
+    padding-bottom: 30px;
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+    .Message{
+        width: 100%;
+    }
+}

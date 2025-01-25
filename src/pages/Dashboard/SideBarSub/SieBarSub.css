@@ -1,0 +1,128 @@
+.SideBarSub{
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    padding-bottom: 80px;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.acctInfo{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    color: white;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.acctInfo .profile{
+    width: 70px;
+    height: 70px;
+    border: 2px solid white;
+    border-radius: 100%;
+    
+}
+
+.acctInfo section{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    h3{
+        text-transform: uppercase;
+    }
+}
+
+.status{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    font-family: sans-serif;
+    line-height:  16.8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ebebeb;
+    
+    span{
+        font-size:  14px;
+        font-weight: 700;
+        font-family: sans-serif;
+        line-height:  16.8px;
+    }
+
+}
+
+.SideBarSub .m{
+    width: 100%;
+    height: auto;
+    display: flex;
+    /* margin-top: 20%; */
+    flex-direction: column;
+    gap: 20px;
+    padding: 0%;
+    background: none;
+}
+
+.SideBarSub main section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.SideBarSub main section button{
+    width: 100%;
+    outline: none;
+    border: none;
+    background: none;
+    color: white;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #cbc8c87c;
+}
+
+.SideBarSub main section button:hover{
+    cursor: pointer;
+}
+
+.SideBarSub main section button .nav-link{
+    width: 100%;
+    outline: none;
+    border: none;
+    background: none;
+    color: white;
+    font-size:  15.84px;
+    line-height:  23.76px;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    font-weight: 400;
+    text-decoration: none;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    transition: background 0.3s all ease;
+
+}
+
+.SideBarSub main section button .nav-link:hover{
+    background-color: rgb(33, 32, 32);
+}
+
+.SideBarSub main section button .nav-link.active {
+    width: 100%;
+    background-color: rgb(33, 32, 32);
+    color: white;
+  }
