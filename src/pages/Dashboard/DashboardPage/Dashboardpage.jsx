@@ -1,17 +1,19 @@
 import React, { useState } from 'react'
 import './Dashboardpage.css'
 import Card from '../ATM/Card';
+import { useSelector } from 'react-redux';
 
 const Dashboardpage = () => {
   const date = new Date();
 const options = { year: 'numeric', month: 'long', day: 'numeric' };
 const formattedDate = date.toLocaleDateString('en-US', options);
-
+const userData = useSelector((state)=> state.blackstone.user)
+console.log("userData", userData);
 
   return (
     <div className='Dashboardpage'>
       <div className="pageHeader">
-        <h3>Hi, Ju Yeong Welcome back!</h3>
+        <h3>Hi, {userData?.userName} Welcome back!</h3>
         <span>Banking Like Never Before.</span>
       </div>
 
@@ -28,7 +30,8 @@ const formattedDate = date.toLocaleDateString('en-US', options);
                 <span>Available Balance</span>
                 <img src="https://cbsremmittance.com/dashboard/img/bar.png" alt="bar" />
                 </div>
-                <aside><h3 style={{color: '#0076b6'}}>USD $</h3> 1,938,990.00</aside>
+                <aside><h3 style={{color: '#0076b6'}}>USD $</h3> {userData?.accountBalance
+                }</aside>
              </div>
             </div>
             <marquee behavior="scroll" direction="left">Good Day! and Welcome to your banking portal. Thank you!</marquee>

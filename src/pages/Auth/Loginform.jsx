@@ -6,14 +6,17 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { useDispatch } from 'react-redux';
+import { loginSuccess } from '../../Global/Slice';
 
 const Loginform = () => {
   const Nav = useNavigate();
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
 
   const LoginSchema = z.object({
-    accountNumber: z.string().min(10,({ message: 'Enter a valid accountNumber' })),
-   password: z.string()
+    accountNumber: z.string().min(10, { message: 'Enter a valid account number' }),
+    password: z.string()
       .min(8, { message: 'Password must be at least 8 characters long' })
       .regex(/[!@#$%^&*(),.?":{}|<>]/, { message: 'Password must include a special character' }),
   });
@@ -25,14 +28,11 @@ const Loginform = () => {
   const onSubmit = async (data) => {
     setLoading(true);
 
-    const userData ={
-      password: data.password,
-      accountNumber: data.accountNumber
-    }
-
     try {
-      const response = await axios.post('https://blackstonecapital-bank-end.vercel.app/api/login', userData);
+      const response = await axios.post('https://blackstonecapital-bank-end.vercel.app/api/login', data);
       console.log(response)
+      dispatch(loginSuccess(response.data));
+
       Swal.fire({
         icon: 'success',
         title: 'Login Successful',
@@ -40,7 +40,7 @@ const Loginform = () => {
         timer: 2000,
         showConfirmButton: false,
       });
-    
+
       setTimeout(() => {
         Nav('/dashboard');
       }, 2000);
