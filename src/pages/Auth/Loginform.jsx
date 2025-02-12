@@ -12,7 +12,7 @@ const Loginform = () => {
   const [loading, setLoading] = useState(false);
 
   const LoginSchema = z.object({
-    email: z.string().email({ message: 'Enter a valid email address' }),
+    accountNumber: z.string().min(10,({ message: 'Enter a valid accountNumber' })),
    password: z.string()
       .min(8, { message: 'Password must be at least 8 characters long' })
       .regex(/[!@#$%^&*(),.?":{}|<>]/, { message: 'Password must include a special character' }),
@@ -27,12 +27,12 @@ const Loginform = () => {
 
     const userData ={
       password: data.password,
-      email: data.email
+      accountNumber: data.accountNumber
     }
 
     try {
-      const response = await axios.post('https://blackstonecapitalbackend.onrender.com/api/login', userData);
-
+      const response = await axios.post('https://blackstonecapital-bank-end.vercel.app/api/login', userData);
+      console.log(response)
       Swal.fire({
         icon: 'success',
         title: 'Login Successful',
@@ -40,7 +40,7 @@ const Loginform = () => {
         timer: 2000,
         showConfirmButton: false,
       });
-
+    
       setTimeout(() => {
         Nav('/dashboard');
       }, 2000);
@@ -68,9 +68,9 @@ const Loginform = () => {
         </div>
 
         <section>
-          <label>Email</label>
-          <input type="text" {...register('email')} />
-          {errors.email && <span style={{ color: 'red' }}>{errors.email.message}</span>}
+          <label>Account Number</label>
+          <input type="text" {...register('accountNumber')} />
+          {errors.accountNumber && <span style={{ color: 'red' }}>{errors.accountNumber.message}</span>}
         </section>
 
         <section>

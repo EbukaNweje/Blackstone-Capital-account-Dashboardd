@@ -38,6 +38,7 @@ const RegisterForm = () => {
     resolver: zodResolver(registerSchema),
   });
 
+
   const onSubmit = async (data) => {
     setLoading(true);
     const userData = {
@@ -48,26 +49,37 @@ const RegisterForm = () => {
       password: data.password,
       address: data.address,
       phoneNumber: data.phone,
-      dateOfBirth: data.dob,
+      dateofBirth: data.dob,
       gender: data.gender,
       country: data.country,
     };
     console.log(userData)
 
+    const sendEmail = async () =>{
+      const userEmail = {email: data.email}
+      console.log(userEmail)
+        try {
+            const res = await axios.post("https://blackstonecapitalbankend.onrender.com/api/signupemailsand", userEmail)
+            console.log(res)
+        }catch (err) {
+          console.log(err)
+        }
+    }
+
     try {
-      const response = await axios.post('https://blackstonecapitalbackend.onrender.com/api/register', userData);
+      const response = await axios.post('https://blackstonecapital-bank-end.vercel.app/api/register', userData);
       setLoading(false);
       console.log(response);
-      
+      sendEmail()
     //   if (response.data.success) {
         Swal.fire({
           title: 'Success!',
           text: 'Registration successful!',
           icon: 'success',
           confirmButtonText: 'Login',
-        }).then(() => {
+        }).then(()=>{
           navigate('/');
-        });
+        })
     //   }
     } catch (error) {
       setLoading(false);
