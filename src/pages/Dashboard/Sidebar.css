@@ -75,6 +75,13 @@
     flex-direction: column;
     gap: 5px;
 
+    span{
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 21px;
+        text-transform: capitalize;
+    }
+
     h3{
         text-transform: uppercase;
     }
@@ -145,7 +152,7 @@
 }
 
 .Sidebar main section button:hover{
-    background-color: blue;
+    /* background-color: blue; */
     cursor: pointer;
 }
 

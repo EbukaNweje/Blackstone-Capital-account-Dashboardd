@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Card.css'
 
-const Card = () => {
+const Card = ({userData}) => {
     const [flipped, setFlipped] = useState(false);
 
   const handleMouseEnter = () => {
@@ -23,22 +23,22 @@ const Card = () => {
       <div className="scratchArea"></div>
       <div className="cardLogo">VISA</div>
       </div>
-      <p className="cardNumber"><span>1234</span> <span>5678</span>  <span>9012 </span> <span>3456</span></p>
+      <p className="cardNumber">{userData?.atmCard.cardNumber || ''}</p>
       <div className="cardDetails">
         <p className="cardHolder">
           <span>CARD HOLDER</span>
-          <h3>Ju Yeong</h3>
+          <h3 style={{textTransform: 'capitalize'}}>{userData?.atmCard.cardHolderName || 'User'}</h3>
         </p>
         <p className="validTill">
           <span>VALID TILL: </span>
-          <h3> 12/24</h3></p>
+          <h3> {userData?.atmCard.cardExpDate}</h3></p>
       </div>
     </div>
     <div className="cardBack">
       <div className="blackBar"></div>
       <div className="whitebarInfo">
       <div className="whiteBar">
-        123
+      {userData?.atmCard.cardCvvNumber}
       </div>
       <p className="infoText">This virtual debit card issued by CBS Bank. pursuant to a licensed from VISA USA Inc.</p>
       </div>

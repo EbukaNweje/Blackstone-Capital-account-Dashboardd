@@ -31,7 +31,7 @@ const Loginform = () => {
     try {
       const response = await axios.post('https://blackstonecapital-bank-end.vercel.app/api/login', data);
       console.log(response)
-      dispatch(loginSuccess(response.data));
+      dispatch(loginSuccess(response.data._id));
 
       Swal.fire({
         icon: 'success',

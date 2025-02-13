@@ -3,7 +3,7 @@ import './Box.css'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const Box = () => {
+const Box = ({userData}) => {
     useEffect(() => {
           AOS.init({
             duration: 3000, 
@@ -14,11 +14,11 @@ const Box = () => {
     <div className="boxHolder">
     <section data-aos="fade-up">
        <span>BOOK BALANCE</span> 
-       <h3>USD $ 1,845,990.00</h3>
+       <h3>USD $ {userData?.accountBalance || '0.00'}</h3>
     </section>
     <section data-aos="fade-up">
     <span>AVAILABLE BALANCE</span> 
-    <h3 style={{color: '#348a2c'}}>USD $ 1,845,990.00</h3>
+    <h3 style={{color: '#348a2c'}}>USD $ {userData?.accountBalance || '0.00'}</h3>
     </section>
     <section data-aos="fade-up">
     <span>ACCOUNT LOGGED IN FROM:</span> 

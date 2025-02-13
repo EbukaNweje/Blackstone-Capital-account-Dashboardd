@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Sidebar.css'
 import { TbTableDashed,TbTransferIn, TbTransfer } from "react-icons/tb";
 import { RiArrowDropDownLine,RiArrowRightSLine  } from "react-icons/ri";
@@ -8,12 +8,35 @@ import { LuTicketsPlane } from "react-icons/lu";
 import { IoMailOutline } from "react-icons/io5";
 import { CiLogout } from "react-icons/ci";
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 const Sidebar = () => {
   const [hovered, setHovered] = useState(null);
+  const [userData, setUserData] = useState(null);
+  const userId = useSelector((state) => state.blackstone.user); 
+  // console.log("User ID:", userId);
 
   const handleMouseEnter = (index) => setHovered(index);
   const handleMouseLeave = () => setHovered(null);
+
+  const getOne = async () => {
+    // console.log('working,,');
+    
+    try {
+      const response = await axios.get(`https://blackstonecapital-bank-end.vercel.app/api/userdata/${userId}`);
+      setUserData(response.data.data);
+      // console.log("getone",response.data.data);
+      
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+    }
+  };
+
+  useEffect(() => {
+    if (userId) getOne();
+  }, [userId]);
+
   return (
     <div className='Sidebar'>
       <div className="sideBarHeader">
@@ -28,13 +51,13 @@ const Sidebar = () => {
       <div className="acctInfo">
         <div className="profile"></div>
         <section>
-          <span>John loe</span>
+          <span>{userData?.atmCard.cardHolderName || 'User'}</span>
           <h3>Account No:</h3>
-          <p>012378307</p>
+          <p>{userData?.accountNumber || 'N/A'}</p>
         </section>
       </div>
       <div className="status">
-        <p>Account status: <span>Active</span></p>
+        <p>Account status: <span>{userData?.status ? 'Active' : 'Inactive'}</span></p>
       </div>
       <main>
         <section>

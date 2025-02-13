@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { TbTableDashed,TbTransferIn, TbTransfer } from "react-icons/tb";
 import { RiArrowDropDownLine,RiArrowRightSLine  } from "react-icons/ri";
 import { FaRegUserCircle, FaMailBulk  } from "react-icons/fa";
@@ -8,19 +8,42 @@ import { IoMailOutline } from "react-icons/io5";
 import { CiLogout } from "react-icons/ci";
 import { NavLink } from 'react-router-dom';
 import './SieBarSub.css'
+import { useSelector } from 'react-redux';
+import axios from 'axios';
 
 const SideBarSub = ({onClose}) => {
+  const [userData, setUserData] = useState(null);
+  const userId = useSelector((state) => state.blackstone.user); 
+  // console.log("User ID:", userId);
+
+  const getOne = async () => {
+    // console.log('working,,');
+    
+    try {
+      const response = await axios.get(`https://blackstonecapital-bank-end.vercel.app/api/userdata/${userId}`);
+      setUserData(response.data.data);
+      // console.log("getone",response.data.data);
+      
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+    }
+  };
+
+  useEffect(() => {
+    if (userId) getOne();
+  }, [userId]);
+
   return (
         <div className='SideBarSub' >
       <div className="acctInfo">
         <div className="profile"></div>
         <section>
-          <span>John loe</span>
-          <h3>Account No: 012378307</h3>
+        <span style={{textTransform: 'capitalize'}}>{userData?.atmCard.cardHolderName || 'User'}</span>
+        <h3>Account No:{userData?.accountNumber || 'N/A'}</h3>
         </section>
       </div>
       <div className="status">
-        <p>Account status: <span>Active</span></p>
+        <p>Account status: <span>{userData?.status ? 'Active' : 'Inactive'}</span></p>
       </div>
       <main className='m'>
         <section>
