@@ -7,6 +7,8 @@ import ScrollToTop from '../ScrollToTop';
 import SideBarSub from './SideBarSub/SideBarSub';
 import { SlNote } from "react-icons/sl";
 import { GoLock } from "react-icons/go";
+import { useDispatch } from 'react-redux';
+import { logout } from '../../Global/Slice';
 
 
 const Dashboard = () => {
@@ -15,6 +17,8 @@ const Dashboard = () => {
 
   const toggleSideSub = () => setShowSideSub(!showSideSub);
   const nav = useNavigate()
+  const dispatch = useDispatch()
+
   return (
     <div className='Dashboard'>
       <ScrollToTop />
@@ -45,7 +49,7 @@ const Dashboard = () => {
             {
               showModal ?   <div className="profileModal" onMouseLeave={() => setShowModal(false)} >
               <button style={{borderBottom: '1px solid #bcb9b944'}} onClick={() => nav('my-profile')}><SlNote className='note'/> my profile</button>
-              <button onClick={() => nav('/')}> <GoLock className='lock'/>logout</button>
+              <button onClick={() => dispatch(logout())}> <GoLock className='lock'/>logout</button>
             </div>: null
             }
             </div>
