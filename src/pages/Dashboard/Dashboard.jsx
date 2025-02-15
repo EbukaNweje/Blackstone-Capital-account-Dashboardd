@@ -22,7 +22,7 @@ const Dashboard = () => {
       <article>
         <div className="sideMobile">
           <div className="sideMobileHead">
-            <span>CBS Federal Bạnking | Online login portal</span>
+            <span> Blackstone Capital | Online login portal</span>
             <IoIosMenu size={45} cursor={'pointer'} onClick={toggleSideSub} />
           </div>
           <div className={`sideBarSubContainer ${showSideSub ? 'open' : 'close'}`}>

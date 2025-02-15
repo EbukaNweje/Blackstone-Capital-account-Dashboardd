@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Card.css'
+import scratch from '../../../assets/scratch.png'
 
 const Card = ({userData}) => {
     const [flipped, setFlipped] = useState(false);
@@ -20,7 +21,9 @@ const Card = ({userData}) => {
   >
     <div className="cardFront">
       <div className="cardFrontHead">
-      <div className="scratchArea"></div>
+      <div className="scratchArea">
+        <img src={scratch} alt="scratch" />
+      </div>
       <div className="cardLogo">VISA</div>
       </div>
       <p className="cardNumber">{userData?.atmCard.cardNumber || ''}</p>
