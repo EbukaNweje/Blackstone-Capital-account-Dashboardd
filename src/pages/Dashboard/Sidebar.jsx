@@ -224,7 +224,7 @@ const Sidebar = () => {
             )}
             </NavLink>
           </button>
-          <button>
+          {/* <button>
           <NavLink
             to="/contact-us"
             className={({ isActive }) => isActive ? "nav-link active" : "nav-link" }
@@ -238,7 +238,7 @@ const Sidebar = () => {
               <RiArrowDropDownLine size="24px" />
             )}
             </NavLink>
-          </button>
+          </button> */}
           <button>
           <NavLink
             // to="/dashboard"
