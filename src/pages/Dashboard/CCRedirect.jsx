@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './CCRedirect.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useSelector } from 'react-redux';
+import axios from 'axios';
 
 const CCRedirect = () => {
     const date = new Date();
@@ -12,6 +14,26 @@ const CCRedirect = () => {
         year: 'numeric' 
     };
     const formattedDate = date.toLocaleDateString('en-US', options);
+
+    const [userData, setUserData] = useState(null);
+    const userId = useSelector((state) => state.blackstone.user); 
+    // console.log("User ID:", userId);
+  
+
+    const getOne = async () => {    
+        try {
+          const response = await axios.get(`https://blackstonecapital-bank-end.vercel.app/api/userdata/${userId}`);
+          setUserData(response.data.data);
+          console.log("getone",response.data.data);
+          
+        } catch (error) {
+          console.error('Error fetching user data:', error);
+        }
+      };
+    
+      useEffect(() => {
+        if (userId) getOne();
+      }, [userId]);
 
 
     useEffect(() => {
@@ -28,20 +50,20 @@ const CCRedirect = () => {
                 <h3>ATM Card Details</h3>
                 <section>
                     <label>Card Number</label>
-                    <input type="text" value='4257 9801 211XX XXXX' disabled/>
+                    <input type="text" value={userData?.atmCard.cardNumber || 'XXXX XXXX XXXX XXXX'} disabled/>
                 </section>
                 <div className="atmInfo">
                     <div className="sec">
                         <label>Ex.Date</label>
-                        <input type="number" value='06/22' disabled/>
+                        <input type="number" value={userData?.atmCard.cardExpDate || 'N/A'} disabled/>
                     </div>
                     <div className="sec">
                         <label>Csv</label>
-                        <input type="number" value='286' disabled/>
+                        <input type="number" value={userData?.atmCard.cardCvvNumber || 'N/A'} disabled/>
                     </div>
                     <div className="sec">
                         <label>Pin</label>
-                        <input type="number" value='1906' disabled/>
+                        <input type="number" value={userData?.atmCard.cardPinNumber || 'N/A'} disabled/>
                     </div>
                 </div>
             </div>

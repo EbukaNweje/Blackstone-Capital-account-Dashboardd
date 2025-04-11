@@ -17,7 +17,7 @@ const Dashboardpage = () => {
     try {
       const response = await axios.get(`https://blackstonecapital-bank-end.vercel.app/api/userdata/${userId}`);
       setUserData(response.data.data);
-      // console.log("getone",response.data.data);
+      console.log("getone",response.data.data);
       
     } catch (error) {
       console.error('Error fetching user data:', error);

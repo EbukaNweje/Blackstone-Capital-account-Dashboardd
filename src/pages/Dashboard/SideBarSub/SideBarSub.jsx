@@ -151,7 +151,7 @@ const SideBarSub = ({onClose}) => {
             apply for loan
             </NavLink>
           </button>
-          <button>
+          {/* <button>
           <NavLink
             to="/contact-us"
             onClick={onClose}
@@ -160,7 +160,7 @@ const SideBarSub = ({onClose}) => {
           <IoMailOutline size={'27px'} />
             contact us
             </NavLink>
-          </button>
+          </button> */}
           <button>
           <NavLink
             to="/dashboard"
