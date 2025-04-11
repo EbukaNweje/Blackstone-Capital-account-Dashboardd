@@ -8,13 +8,15 @@ import { IoMailOutline } from "react-icons/io5";
 import { CiLogout } from "react-icons/ci";
 import { NavLink } from 'react-router-dom';
 import './SieBarSub.css'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
+import { logout } from '../../../Global/Slice';
 
 const SideBarSub = ({onClose}) => {
   const [userData, setUserData] = useState(null);
   const userId = useSelector((state) => state.blackstone.user); 
   // console.log("User ID:", userId);
+  const dispatch = useDispatch()
 
   const getOne = async () => {
     // console.log('working,,');
@@ -163,8 +165,7 @@ const SideBarSub = ({onClose}) => {
           </button> */}
           <button>
           <NavLink
-            to="/dashboard"
-            onClick={onClose}
+            onClick={() => {onClose, dispatch(logout())}}
             className={({ isActive }) => isActive ? "nav-link active" : "nav-link" }
            >
           <CiLogout size={'27px'}/>

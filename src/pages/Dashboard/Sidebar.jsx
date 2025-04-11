@@ -9,13 +9,17 @@ import { IoMailOutline } from "react-icons/io5";
 import { CiLogout } from "react-icons/ci";
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../Global/Slice';
+
+
 
 const Sidebar = () => {
   const [hovered, setHovered] = useState(null);
   const [userData, setUserData] = useState(null);
   const userId = useSelector((state) => state.blackstone.user); 
   // console.log("User ID:", userId);
+  const dispatch = useDispatch()
 
   const handleMouseEnter = (index) => setHovered(index);
   const handleMouseLeave = () => setHovered(null);
@@ -241,7 +245,7 @@ const Sidebar = () => {
           </button> */}
           <button>
           <NavLink
-            // to="/dashboard"
+           onClick={() => dispatch(logout())}
             className={({ isActive }) => isActive ? "nav-link active" : "nav-link" }
             onMouseEnter={() => handleMouseEnter(12)}
            >
