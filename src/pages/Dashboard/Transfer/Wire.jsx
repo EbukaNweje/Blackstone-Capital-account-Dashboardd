@@ -22,6 +22,7 @@ const Wire = () => {
   const [otp, setOtp] = useState('');
   const userId = useSelector((state) => state.blackstone.user); 
   const [loading, setLoading] = useState(false);
+  const [loadingv, setLoadingv] = useState(false);
   const [verified, setVerified] = useState(false);
   const nav = useNavigate()
 
@@ -52,7 +53,7 @@ const Wire = () => {
     try {
       if (isFormValid()) {
         // Add transfer logic here
-        const response = await axios.post(`https://blackstonecapital-bank-end.vercel.app/api/send-otp/${userId}`)
+        const response = await axios.post(`https://blackstonecapitalbankend.onrender.com/api/send-otp/${userId}`)
         console.log(response)
         toast.success(response.data.message);
         setShowOtpModal(true);
@@ -65,6 +66,7 @@ const Wire = () => {
   };
 
   const handleOtpVerify = async () => {
+    setVerified(true);
     try {
       const data = {
         amount: amount,
@@ -81,14 +83,13 @@ const Wire = () => {
       const response = await axios.post(`https://blackstonecapital-bank-end.vercel.app/api/vrify-otp-and-create-transfer/${userId}`, data);
       console.log(response);
       toast.success(response.data.message);
-      setVerified(true);
       console.log('Verifying OTP:', data);
       // Add OTP verification logic here
       setShowOtpModal(false);
       nav("/dashboard")
       
     }catch (error) {
-      setLoading(false);
+      setVerified(false);
       console.error('Error verifying OTP:', error);
       toast.error(error.response.data.message);
     }
@@ -241,13 +242,13 @@ const Wire = () => {
             <h2>Enter OTP</h2>
             <input
               type="text"
-              placeholder="Enter 4-digit OTP"
+              placeholder="Enter 6-digit OTP"
               value={otp}
               onChange={(e) => setOtp(e.target.value)}
             />
             <div className="otp-actions">
               <button onClick={() => setShowOtpModal(false)}>Cancel</button>
-              <button onClick={handleOtpVerify}>{verified ? 'Transfered"' : 'Verify' }</button>
+              <button onClick={handleOtpVerify}>{verified ? 'loading...' : 'Verify' }</button>
             </div>
           </div>
         </div>
